@@ -16,6 +16,13 @@ call pathogen#helptags()
 
 
 """"""""""""""""""""""""""""""
+" => ack.vim plugin
+""""""""""""""""""""""""""""""
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+""""""""""""""""""""""""""""""
 " => bufExplorer plugin
 """"""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
@@ -23,6 +30,8 @@ let g:bufExplorerShowRelativePath=1
 let g:bufExplorerFindActive=1
 let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
+map <leader>h :BufExplorerHorizontalSplit<cr>
+map <leader>v :BufExplorerVerticalSplit<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -174,3 +183,10 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YouCompleteMe
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
